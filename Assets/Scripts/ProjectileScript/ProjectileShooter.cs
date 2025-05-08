@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems; 
 
 public class ProjectileShooter : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class ProjectileShooter : MonoBehaviour
 
     void Update()
     {
+        // Si el mouse está sobre un elemento UI (como el botón "Volver"), no hacer nada
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0)) // Click izquierdo
         {
             Shoot();
@@ -27,11 +34,9 @@ public class ProjectileShooter : MonoBehaviour
             case ProjectileType.Type1:
                 projectile = Type1ProjectilePool.Instance.GetFromPool();
                 break;
-
             case ProjectileType.Type2:
                 projectile = Type2ProjectilePool.Instance.GetFromPool();
                 break;
-
             case ProjectileType.Type3:
                 projectile = Type3ProjectilePool.Instance.GetFromPool();
                 break;
@@ -51,7 +56,10 @@ public class ProjectileShooter : MonoBehaviour
     void CycleProjectileType()
     {
         currentType++;
-        if ((int)currentType > 2) currentType = ProjectileType.Type1;
+        if ((int)currentType > 2)
+        {
+            currentType = ProjectileType.Type1;
+        }
 
         Debug.Log("Tipo actual: " + currentType);
     }
