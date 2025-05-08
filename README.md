@@ -5,6 +5,10 @@
 **Estudiante:** Isabela Giraldo Jimenez
 **Evaluación:** Proyecto Final con Patrones de Diseño en Unity
 
+## Enlace al ejecutable
+
+Puedes descargar y probar el proyecto desde este enlace:  
+[Descargar Patronesdediseño.exe en Google Drive](https://drive.google.com/file/d/16XgYL6Zee62pPzsMRl2ebOXUHXgE5hdq/view?usp=sharing)
 ---
 
 ## Índice
@@ -145,3 +149,5 @@ El botón "Volver" está incluido y funcional.
 ---
 
 **Estado final:** Proyecto completamente funcional y en cumplimiento con los requerimientos del examen.
+
+
